@@ -27,14 +27,14 @@ Crea una aplicación en consola que administre empleados de una empresa, calcule
 
 ### Clases y Jerarquía  
 
-- **Clase Abstracta `Empleado`**  
+- **Clase Abstracta `modelo.Empleado`**  
   - Atributos comunes: `id`, `nombre`, `salarioBase`.  
   - Métodos: Getters y setters, y un método abstracto `calcularSalario()`.  
   - Uso de modificadores de acceso: Atributos privados, métodos públicos.  
 
 - **Clases Concretas**  
-  - `EmpleadoTiempoCompleto`: Hereda de `Empleado` e implementa `calcularSalario()` considerando un sueldo fijo y bonificaciones.  
-  - `EmpleadoPorHora`: Hereda de `Empleado` e implementa `calcularSalario()` basado en horas trabajadas y el valor de la hora.  
+  - `modelo.EmpleadoTiempoCompleto`: Hereda de `modelo.Empleado` e implementa `calcularSalario()` considerando un sueldo fijo y bonificaciones.  
+  - `EmpleadoPorHora`: Hereda de `modelo.Empleado` e implementa `calcularSalario()` basado en horas trabajadas y el valor de la hora.  
 
 - **Interfaz `Bonificable`**  
   - Define el método `calcularBonificacion()`.  
@@ -42,10 +42,10 @@ Crea una aplicación en consola que administre empleados de una empresa, calcule
 
 ### Uso de Constructores y Sobrecarga  
 - Proporciona constructores sobrecargados en cada clase para crear objetos con distintos conjuntos de parámetros.  
-- Por ejemplo, en `EmpleadoTiempoCompleto` podrías tener un constructor que reciba solo `id` y `nombre`, y otro que también incluya `salarioBase` y `bonificacion`.  
+- Por ejemplo, en `modelo.EmpleadoTiempoCompleto` podrías tener un constructor que reciba solo `id` y `nombre`, y otro que también incluya `salarioBase` y `bonificacion`.  
 
 ### Uso de `static` y `final`  
-- **Atributo `static`**: Un contador de empleados en la clase `Empleado` o en una clase de utilidad para llevar el total de empleados creados.  
+- **Atributo `static`**: Un contador de empleados en la clase `modelo.Empleado` o en una clase de utilidad para llevar el total de empleados creados.  
 - **Constantes (`static final`)**: Define valores constantes, como el valor de la hora extra o algún factor de bonificación, que no se deben modificar.  
 
 ### Uso de Estructuras de Control y Operadores  
@@ -55,13 +55,13 @@ Crea una aplicación en consola que administre empleados de una empresa, calcule
 ## 4. Pasos para el Desarrollo  
 
 1. **Diseño de Clases**  
-   - Esboza un diagrama UML simple que incluya la clase abstracta `Empleado`, las clases derivadas, y la interfaz `Bonificable`.  
+   - Esboza un diagrama UML simple que incluya la clase abstracta `modelo.Empleado`, las clases derivadas, y la interfaz `Bonificable`.  
 
-2. **Implementación de la Clase `Empleado`**  
+2. **Implementación de la Clase `modelo.Empleado`**  
    - Define atributos privados, constructores, getters/setters y el método abstracto `calcularSalario()`.  
 
 3. **Implementación de Clases Derivadas**  
-   - Implementa `EmpleadoTiempoCompleto` y `EmpleadoPorHora`, cada una con su lógica específica en `calcularSalario()`.  
+   - Implementa `modelo.EmpleadoTiempoCompleto` y `EmpleadoPorHora`, cada una con su lógica específica en `calcularSalario()`.  
    - Implementa la interfaz `Bonificable` en la(s) clase(s) que consideres que deben tener bonificación.  
 
 4. **Uso de `static` y `final`**  
@@ -82,7 +82,7 @@ Crea una aplicación en consola que administre empleados de una empresa, calcule
 ## 5. Desafíos Adicionales  
 
 - **Polimorfismo**  
-  Crea un método que reciba un objeto de tipo `Empleado` y lo procese sin conocer su clase exacta, demostrando el uso del polimorfismo.  
+  Crea un método que reciba un objeto de tipo `modelo.Empleado` y lo procese sin conocer su clase exacta, demostrando el uso del polimorfismo.  
 
 - **Herencia y Overriding**  
   Asegúrate de que las subclases sobreescriban adecuadamente el método `calcularSalario()` y aprovechen la herencia para reutilizar código.  
